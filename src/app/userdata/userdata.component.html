@@ -1,0 +1,15 @@
+<form method="post" action="https://autumn-scene-14fc.aftercovid19.workers.dev/" #aftercvd19="ngForm" (ngSubmit)="onClickSubmit(aftercvd19,$event)"> 
+    <input class="input" required minlength="2" maxlength="25" type="text" name="username" 
+    placeholder="username" class = "form-control" #name="ngModel" ngModel> 
+    <div *ngIf="name.touched && name.invalid" class="help is-danger alert alert-danger">
+        <p *ngIf="name.errors.required">Username Required!</p>
+    </div>
+    <br/> 
+    <br/>
+    <input rows="10" maxlength="500" type="textarea" class="textarea is-large" name="userinput" placeholder="what will you like to do" ngModel>
+    <div *ngIf="name.touched && name.invalid" class="help is-danger alert alert-danger">
+        <p *ngIf="name.errors.required">Please enter the information</p>
+    </div>
+    <br/><br/>
+    <input class="button is-primary" type="submit" value="submit" [disabled]="!aftercvd19.form.valid"> 
+ </form>
